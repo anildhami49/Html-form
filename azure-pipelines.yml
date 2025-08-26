@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest' # Use a Microsoft-hosted agent for this stage
+  name: 'agent1' # Use a Microsoft-hosted agent for this stage
 
 steps:
 - script: |
