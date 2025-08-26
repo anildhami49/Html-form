@@ -1,0 +1,22 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest' # Use a Microsoft-hosted agent for this stage
+
+steps:
+- script: |
+    echo "Building the project..."
+    echo "This is a simple HTML project, so nothing to build."
+  displayName: 'Build Step'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+    ArtifactName: 'web_artifact'
+  displayName: 'Publish Artifacts'
